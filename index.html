@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/js.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="view/css/css.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="view/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="view/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="view/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="view/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="view/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="view/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="view/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="view/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="view/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="view/images/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="view/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="view/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="view/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="view/images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>UX2</title>
+</head>
+
+<body class="main_color_three">
+    <div class="container main_color_one" id="logged_in_false" hidden>
+
+        <div class="formcon" id="logincon">
+            <form id="form_login" class="border-top2 row main_color_three" action="model/ws.php"
+                method="POST">
+                <h5 class="main_text">Login</h5>
+                <input type="hidden" name="error" />
+                <div class="row input-centre">
+                    <div class="input-field main_color_four col s12">
+                        <input type="text" class="input-boxes2" name="login_name" id="username" required />
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row input-centre">
+                    <div class="input-field main_color_four col s12">
+                        <input type="password" class="input-boxes2" name="pass" id="password" />
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light main_color_five" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+
+        <div id="modal_create_password" class="modal border-top2 row main_color_three">
+            <div id="model_show_form" class="modal-content">
+                <form action="../../model/ws.php" id="form_create_password" method="POST"></form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container main_color_one" id="logged_in_true" hidden>
+
+        <header id="manager_access" class="row main_color_two" hidden>
+            <a class='waves-effect text_color col s2 dropdown-trigger btn main_color_two' id="buttoncss"
+                href='#' data-target='dropdown1'><i id="hamburger" class="material-icons main_text">menu</i></a>
+            <ul id='dropdown1' class='dropdown-content main_color_ten'>
+                <li><a id="menu_home" class="menuitem main_text black-text">Home</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a id="menu_addproject" class="menuitem main_text black-text">Add Project</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a id="menu_addjobtype" class="menuitem main_text black-text">Add Job Type</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a id="menu_addemployee" class="menuitem main_text black-text">Add Employee</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a id="menu_deleteproject" class="menuitem main_text black-text">Delete Project</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a id="admin_logout" class="main_text">Logout</a></li>
+            </ul>
+            <div class="col s8"></div>
+            <button data-target="setting"
+                class="waves-effect text_color col s2 right-align waves-effect waves-light btn modal-trigger main_color_two"><i
+                    class="material-icons buttons_icon main_text">settings</i></button>
+            <div id="setting" class="modal main_color_ten">
+                <div class="modal-content">
+                    <h4 class="center main_text">Settings</h4>
+                    <li class="divider" tabindex="-1"></li>
+                    <div class="row settingmar">
+                        <div class="col s6 main_text">Dark Mode:</div>
+                        <div class="col s6 switch">
+                            <label>
+                                Off
+                                <input onchange="dark_mode()" id="manager_dark" type="checkbox">
+                                <span class="lever"></span>
+                                On
+                            </label>
+                        </div>
+                    </div>
+                    <li class="divider" tabindex="-1"></li>
+                    <div class="modal-footer main_color_ten">
+                        <a href="#!" class="modal-close main_text main_color_nine waves-effect waves-green btn-flat">Confirm</a>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <header id="employee_access" class="row main_color_two" hidden>
+            <button id="form_logout"
+                class="waves-effect text_color col s2 right-align waves-effect waves-light btn main_color_two">
+                <i class="material-icons buttons_icon main_text">skip_previous</i>
+            </button>
+
+            <div class="col s8"></div>
+            <button data-target="setting_emp"
+                class="waves-effect text_color col s2 right-align waves-effect waves-light btn modal-trigger main_color_two"><i
+                    class="material-icons buttons_icon main_text">settings</i></button>
+            <div id="setting_emp" class="modal main_color_ten">
+                <div class="modal-content">
+                    <h4 class="center main_text">Settings</h4>
+                    <li class="divider" tabindex="-1"></li>
+                    <div class="row settingmar">
+                        <div class="col s6 main_text">Dark Mode:</div>
+                        <div class="col s6 switch">
+                            <label>
+                                Off
+                                <input onchange="dark_mode()" id="emp_dark" type="checkbox">
+                                <span class="lever"></span>
+                                On
+                            </label>
+                        </div>
+                    </div>
+                    <li class="divider" tabindex="-1"></li>
+                    <div class="modal-footer main_color_ten">
+                        <a href="#!" class="modal-close main_text main_color_nine waves-effect waves-green btn-flat">Confirm</a>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div id="display">
+
+            <div id="content_home" hidden>
+
+                <div class="row" id="spinner_loader" hidden>
+                    <div class="col s5"></div>
+                    <div class="col s2" id="spinner">
+                        <div class="preloader-wrapper big active ">
+                            <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s5"></div>
+                </div>
+                <div class="projectcon border-top" id="project_container" hidden></div>
+
+
+            </div>
+            <div id="content_addproject" hidden>
+                <div class="formcon">
+                    <form id="create_project_form" class="row main_color_three border-top2"
+                        action="model/ws.php" method="POST">
+                        <h5 class="main_text">Add New Project</h5>
+                        <h6 class="main_text">Project Details:</h6>
+                        <input type="hidden" name="error" />
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input name="project_name" id="project_name" type="text" class="validate input-boxes"
+                                    oninput="validation(this, 'ctype_alnum')" required>
+                                <label for="project_name">Project Name</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field col s12 no-margin main_color_four" >
+                                <textarea name="project_description" id="project_description"
+                                    oninput="validation(this, 'description')" class="materialize-textarea "></textarea>
+                                <label for="project_description">Project Description</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="datepicker" id="date_start" onchange="validation(this, 'date')" required>
+                                <label for="date_start">Start Date</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="datepicker" id="date_end" onchange="validation(this, 'date_again')" required>
+                                <label for="date_end">End Date</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field col s12 main_color_four">
+                                <select name="num_task" id="task_changer_id" onchange="validation(this, 'select'); num_task_displayer(this)"
+                                    required>
+                                    <option value="" disabled selected>Number of tasks</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="divider" tabindex="-1"></div>
+
+                        <h6 class="main_text">Task Details:</h6>
+                        <div id="task_displayer">
+
+                        </div>
+                        <button id="new_project_submit_button" class="create-pass-button btn waves-effect waves-light main_color_five"
+                            type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+            <div id="content_addjobtype" hidden>
+
+                <div class="formcon">
+                    <form id="form_create_new_job_type" class="border-top2 row main_color_three"
+                        action="model/ws.php" method="POST">
+                        <h5 class="main_text">Add New Job Type</h5>
+                        <input type="hidden" name="error" />
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="input-boxes2" name="job_type_name" id="job_type_name"
+                                    oninput="validation(this, 'ctype_alpha')" required />
+                                <label for="job_type_name">Job Type Name:</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <textarea name="job_type_description" id="job_type_description"
+                                    class="materialize-textarea " oninput="validation(this, 'description')"
+                                    required></textarea>
+                                <label for="job_type_description">Description</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light main_color_five" type="submit" name="action"
+                            disabled>Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="content_addemployee" hidden>
+                <div class="formcon">
+                    <form id="form_create_employee" class="border-top2 row main_color_three"
+                        action="model/ws.php" method="POST">
+                        <h5 class="main_text">Add New Employee</h5>
+                        <input type="hidden" name="error" />
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="input-boxes2" name="create_username" id="create_username"
+                                    oninput="validation(this, 'username')" required />
+                                <label for="create_username">Username</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="input-boxes2" name="first" id="create_first"
+                                    oninput="validation(this, 'name')" required />
+                                <label for="create_first">First Name</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="input-boxes2" name="last" id="create_last"
+                                    oninput="validation(this, 'name')" required />
+                                <label for="create_last">Last Name</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="input-boxes2" name="email" id="create_email"
+                                    oninput="validation(this, 'email')" required />
+                                <label for="create_email">Email</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <input type="text" class="input-boxes2" name="phone" id="create_phone"
+                                    oninput="validation(this, 'phone')" required />
+                                <label for="create_phone">Phone</label>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <select name="job_type_user" class="browser-default" id="job_type_user"
+                                    onchange="validation(this, 'select')" required>
+                                    <option disabled selected>Choose Job Type</option>
+                                </select>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+
+                        <button class="btn waves-effect waves-light main_color_five" type="submit"
+                            name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="content_deleteproject" hidden>
+                <div class="formcon">
+                    <form id="form_delete_project" class="border-top2 row main_color_three"
+                        action="model/ws.php" method="POST">
+                        <h5 class="main_text">Delete Project</h5>
+                        <input type="hidden" name="error" />
+                        <div class="row input-centre">
+                            <div class="input-field main_color_four col s12">
+                                <select name="project_delete" class="browser-default" id="project_delete"
+                                    onchange="validation(this, 'select')" required>
+                                    <option disabled selected>Choose Project</option>
+                                </select>
+                                <div class="error_message"></div>
+                            </div>
+                        </div>
+
+                        <button class="btn waves-effect waves-light main_color_five" type="submit"
+                            name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                        <div id="model_confirmationer" class="modal border-top2 row main_color_three">
+                            <div id="model_confirmation" class="modal-content">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+<script id="create_password_form" type="text/template">
+    <h5 class="main_text">Create Password</h5>
+    <input type="hidden" name="error"/>
+    <input type="hidden" name="user_id_create" value="{{user_name}}">
+    <div class="row input-centre">
+        <div class="input-field main_color_four col s12">
+            <input type="password" class="validate input-boxes2" id="create_password" name="create_password" oninput="validation(this, 'password')" required>
+            <label for="create_password">Password</label>
+            <div class="error_message"></div>
+        </div>
+    </div>
+    <div class="row input-centre">
+        <div id="pass_again_input" class="input-field main_color_four col s12">
+            <input type="password" class="validate input-boxes2" id="create_password_again" name="create_password_again" oninput="validation(this, 'password_again')" required>
+            <label for="create_password_again">Password Again</label>
+            <div class="error_message"></div>
+        </div>
+    </div>
+    <button  class="create-pass-button btn waves-effect waves-light main_color_five" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+    </button>
+</script>
+
+<script id="confirmation" type="text/template">
+    <h5 class="text_center">Confirm Delete</h5>
+    <p class="text_center">{{project_name_confirm}}</p>
+    <div class="row text_center">
+        <a href="#!" class="modal-close waves-effect waves-light btn" onclick="delete_project()">Yes</a>
+        <a href="#!" class="modal-close waves-effect waves-light btn">No</a>
+    </div>
+</script>
+
+<script id="project_display" type="text/template">
+    <div class="col s12 main_color_six card-border extra_room">
+        <div class="card sticky-action main_color_eight">
+
+            <div class="card-content">
+                <span class="card-title main_text">{{project_name}}</span>
+                <ul class="collapsible" id="{{project_task_target}}">
+                <div class="row spinner_task" hidden >
+                        <div class="col s5"></div>
+                        <div class="col s2" id="spinner">
+                            <div class="preloader-wrapper small  active ">
+                                <div class="spinner-layer spinner-blue-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s5"></div>
+                    </div>
+            </div>
+            <div class="card-action main_color_eight">
+                <a class="btn-floating black-text main_color_four halfway-fab waves-effect waves-green
+                activator"><i class="material-icons">add</i></a>
+
+            </div>
+            <div class="card-reveal main_color_eight">
+                <span class="main_text card-title ">Description<i class="material-icons right main_text">close</i></span>
+                <p class="main_text">{{project_discription}}</p>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="task_displayer_target" type="text/template">
+    <li class="task_selector">
+        <div class="collapsible-header main_color_nine main_text col s6">{{task_name}}</div>
+        <div class="collapsible-body">
+            <p class="main_text">{{task_description}}</p>
+
+            <div id="{{task_status_other}}"></div>
+            <div id="{{task_status_update}}"></div>
+        </div>
+    </li>
+</script>
+
+<script id="other_status" type="text/template">
+    <div class="divider" tabindex="-1"></div>
+        <div class="row">
+            <div class="col s10 main_text">{{employee_name}}: {{employee_status}}</div>
+        </div>
+</script>
+
+<script id="update_status_script" type="text/template">
+    <div class="divider" tabindex="-1"></div>
+        <div class="row">
+            <div class="col s6 main_text">{{employee_name}}: {{employee_status}}</div>
+            <div class="relative col s6">
+                <div
+                    class="fixed-action-btn right click-to-toggle direction-left status-button">
+                    <a class="btn-floating btn-small main_color_seven">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul>
+                        <li class="no-margin">
+                            <a id="{{not_started_task_id}}" class="btn-floating red static update_not_started" name="Not Started" onclick=" update_status(this)">
+                                <i class="material-icons" id="block">block</i>
+                            </a>
+                        </li>
+                        <li class="no-margin">
+                            <a id="{{in_progess_task_id}}" class="btn-floating yellow darken-1 static update_in-progess" name="In-progess" onclick="update_status(this)">
+                                <i class="material-icons">cached</i>
+                            </a>
+                        </li>
+                        <li class="no-margin">
+                            <a id="{{completed_task_id}}" class="btn-floating green static update_completed" name="Completed" onclick="update_status(this)">
+                                <i class="material-icons">check</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</script>
+
+<script id="create_task_num" type="text/template">
+    <h6 class="main_text">Create New Task</h6>
+    <div class="row input-centre">
+        <div class="input-field main_color_four col s12">                
+            <input type='text' class="input-boxes" oninput="validation(this, 'ctype_alnum')" name='{{task_name}}' id='{{task_name}}' required />
+            <label for='{{task_name}}'>Task Name</label>
+            <div class="error_message"></div>
+        </div>
+    </div>
+    <div class="row input-centre">
+        <div class="input-field col s12 no-margin main_color_four">
+            <textarea class="materialize-textarea" oninput="validation(this, 'description')" name='{{task_description}}' id='{{task_description}}' required></textarea>
+            <label for='task_description'>Description</label>
+            <div class="error_message"></div>
+        </div>
+    </div>
+    <div class="row input-centre">
+        <div class="input-field col s12 main_color_four">
+            <select name="{{task_order}}" id='{{task_order}}' required>
+                <option value="" disabled selected>Select Order</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option> 
+            </select>
+        </div>
+    </div>
+    <div class="row input-centre">
+        <div class="input-field col s12 main_color_four">
+            <p class="range-field" id="hours">
+                <input type="range" name='{{duration}}' id='{{duration}}' required min="0" max="52" oninput="validation(this, 'number')" required>
+                <span class="thumb">
+                    <span class="value"></span>
+                </span>
+            </p>
+            <label for="duration">Estimate Hours</label>
+            <div class="error_message"></div>
+        </div>
+    </div>
+    <div class="row input-centre">
+        <div class="input-field col s12 main_color_four">
+            <select name="{{num_assign_emp}}" id="{{num_assign_emp}}" onchange="validation(this, 'select'); num_emp_displayer(this)" required>
+                <option value="" disabled selected>Choose Number of Employees</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            <div class="error_message"></div>
+        </div>
+    </div>
+    <div id="{{emp_displayer}}">
+                    
+    </div> 
+    <!-- <label for='duration'>Duration in hours</label>
+    <input type="number" name='{{duration}}' id='{{duration}}' required />  -->
+</script>
+
+<script id="create_emp_num" type="text/template">
+    <h6 class="main_text">Assign Team Members</h6>
+    <div class="row input-centre">
+        <div class="input-field col s12">
+            <select name="{{assign_emp}}" class="browser-default list_of" onchange="validation(this, 'select')" onclick="populate_employee_field()" required>
+                <option value="" disabled selected>Choose Employee</option>
+                {{employee_options}} 
+            </select>
+            <div class="error_message"></div>
+        </div>
+    </div>
+</script>
+
+</html>

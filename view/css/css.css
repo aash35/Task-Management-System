@@ -1,0 +1,328 @@
+@media only screen and (min-width: 601px) {
+    .container {
+        margin: 0px;
+        width: 100%;
+    }
+}
+
+:root{
+    --main_color_one:#90a4ae;
+    --main_color_two:#78909c;
+    --main_color_three:#eceff1;
+    --main_color_four:#eeeeee;
+    --main_color_five:#43a047;
+    --main_color_six:#9575cd;
+    --main_color_seven:#c5cae9;
+    --main_color_eight:white;
+    --main_color_nine:#a5d6a7;
+    --main_color_ten:#eeeeee;
+    --text_color:black;
+}
+[data-theme="dark"]{
+    --main_color_one:#37474f;
+    --main_color_two:#263238;
+    --main_color_three:#212121;
+    --main_color_four:#eeeeee;
+    --main_text:#43a047;
+    --main_color_six:#673ab7;
+    --main_color_seven:#c5cae9;
+    --main_color_eight:#212121;
+    --main_color_nine:#1b5e20;
+    --main_color_ten:#263238;
+    --text_color:white;
+}
+label.active {
+    color: var(--text_color)!important;
+}
+.main_color_one{
+    background-color: var(--main_color_one);
+}
+.main_color_two{
+    background-color: var(--main_color_two)!important ;
+}
+.main_color_three{
+    background-color: var(--main_color_three);
+}
+.main_color_four{
+    background-color: var(--main_color_four);
+}
+.main_color_five{
+    background-color: var(--main_color_five);
+}
+.main_color_six{
+    background-color: var(--main_color_six);
+}
+.main_color_seven{
+    background-color: var(--main_color_seven);
+}
+.main_color_eight{
+    background-color: var(--main_color_eight)!important;
+}
+.main_color_nine{
+    background-color: var(--main_color_nine)!important;
+}
+.main_color_ten{
+    background-color: var(--main_color_ten)!important;
+}
+.main_text {
+    color: var(--text_color)!important;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+}
+
+.error_message{
+    background: #ef5350;
+    text-align: center;
+    border-radius: 4px;
+}
+
+#dropdown1 {
+    font-size: 20px;
+    width: 150px !important;
+}
+
+#buttoncss {
+    padding: 0 5px;
+}
+
+#hamburger {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: black;
+}
+
+#hamburger:active {
+    color: rgb(73, 73, 73);
+    font-size: 2.5rem;
+}
+
+.buttons_icon {
+    font-size: 2.2rem !important;
+    color: black;
+}
+
+.buttons_icon:active {
+    color: rgb(73, 73, 73);
+    font-size: 2.5rem !important;
+}
+
+.textcolor {
+    color: black;
+}
+.text_center{
+    text-align: center;
+    padding: 8px !important;
+}
+
+.modal-content {
+    padding: 10px !important;
+}
+.modal-footer {
+    padding: 0px !important;
+    height: auto !important;
+}
+#spinner{
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.settingmar {
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+}
+
+.row {
+    margin-bottom: 0px;
+}
+
+.projectcon {
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.formcon {
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.corners {
+    border-radius: 5px;
+}
+
+.card-title {
+    font-weight: bold !important;
+}
+
+.card-content {
+    padding: 10px !important;
+}
+
+.card {
+    margin: 0px !important;
+    box-shadow: 0px 0px 0px !important;
+}
+
+/* .card-action {
+    background-color: white !important;
+} */
+
+.card-border {
+    padding: 4px !important;
+}
+
+.card-reveal {
+    padding: 4px !important;
+}
+
+.btn-floating.halfway-fab {
+    bottom: 20px;
+    right: 12px;
+}
+
+.btn-floating {
+    width: 25px;
+    height: 25px;
+}
+
+.btn-floating i {
+    line-height: 0px;
+    color: black;
+}
+
+.collapsible-body {
+    padding: 0.8rem;
+}
+
+.status-button {
+    position: static;
+}
+
+.static {
+    position: static !important;
+}
+
+.btn-floating.btn-small {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.no-margin {
+    margin: 3px 0px !important;
+}
+
+#block {
+    position: relative;
+    top: -1px;
+}
+
+.divider {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.input-field {
+    margin: 0px;
+    margin-top: 12px;
+    border-radius: 5px;
+    padding: 0px;
+    font-size: 12px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#search {
+    margin: 0px;
+    height: 2rem;
+}
+
+.input-field>label {
+    top: -8px;
+    left: 5px;
+}
+
+.active {
+    top: -1px !important;
+    color: black !important;
+}
+
+.input-field input[type=search]:focus {
+    background-color: #eee !important;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.border-top {
+    margin-top: 3px;
+}
+
+.border-top2 {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.extra_room{
+    margin-top: 20px;
+}
+#form_login{
+    margin-top: 0px;
+}
+#logincon{
+    padding-top: 10px;
+}
+
+h5 {
+    font-weight: bold !important;
+    margin: 0px;
+    padding-left: 10px;
+}
+
+h6 {
+    font-weight: bold !important;
+    margin: 0px;
+    padding-left: 10px;
+}
+
+.input-boxes {
+    margin: 0px;
+    height: 2rem !important;
+}
+.input-boxes2 {
+    margin: 0px;
+    height: 36px !important;
+}
+
+.create-pass-button{
+    margin-top: 10px !important;
+}
+.input-centre {
+    padding: 5px;
+}
+#pass_again_input{
+    margin-top:  20px;
+}
+
+.no-margin {
+    margin-top: 6px !important;
+}
+
+.thumb {
+    margin: 0px !important;
+}
+
+#hours {
+    padding-top: 20px !important;
+}
