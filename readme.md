@@ -41,7 +41,7 @@ Username=testerman
 Password=(doesnt have a password log in with this to see the create password feature)
 
 ### Roadmap
-1. Security on discriptions needs to be modified to protect against injects (currently doesnt restrict <h1> tags
+1. Security on discriptions needs to be modified to protect against injects (currently doesnt restrict `<h1>` tags
    for example) 
 2. Project displayer needs to display all projects for a manager so that deleting the projects can be done from 
    the one place allowing managers to better understand which projects they are deleting
