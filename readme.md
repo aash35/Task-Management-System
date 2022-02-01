@@ -1,10 +1,10 @@
 ## Diploma of Web Development - Major Project Part 1
 
 This project was created as a Web Application for the first part of the Diplomas major project. It was created using: 
-***HTML** and **CSS** - Structure and Styling 
+* **HTML** and **CSS** - Structure and Styling 
 * **Javascript** - Frontend interface (ajax for asynchronous backend calls) 
-***PHP** - Backend API 
-***MySQL** - Database Management System
+* **PHP** - Backend API 
+* **MySQL** - Database Management System
 
 ###Operational
 
