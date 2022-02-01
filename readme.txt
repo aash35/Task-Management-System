@@ -1,3 +1,13 @@
+************************   Diploma of Web Development - Major Project Part 1   **************************************************
+
+This project was created as a Web Application for the first part of the Diplomas major project. It was created using: 
+HTML and CSS - Structure and Styling 
+Javascript - Frontend interface (ajax for asynchronous backend calls) 
+PHP - Backend API 
+MySQL - Database Management System
+
+*****************************************   Operational   ***********************************************
+
 Import webapp.sql file into MySQL or other relational database management system 
 
 The database needs to be named: webapp
@@ -30,6 +40,7 @@ Password=(doesnt have a password log in with this to see the create password fea
 Username=testerman
 Password=(doesnt have a password log in with this to see the create password feature)
 
+********************************************   Roadmap   ************************************************************
 
 Roadmap:
 1. Security on discriptions needs to be modified to protect against injects (currently doesnt restrict <h1> tags
@@ -38,13 +49,12 @@ Roadmap:
    the one place allowing managers to better understand which projects they are deleting
 3. A system that randomizes the back drop of each project (could be done through an array with different colours 
    inside)
-4. Coloured indicators on a task’s overall status (like a percentage bar that changes depending on how many 
+4. Coloured indicators on a taskâ€™s overall status (like a percentage bar that changes depending on how many 
    employees have completed the task 50% green, 50% red for example). 
 5. A visual indication of which tasks you are 
-   assigned too so that the user doesn’t need to search for their task statuses.
+   assigned too so that the user doesnâ€™t need to search for their task statuses.
 6. Order system would restrict uses from completing tasks unless previous task were completed
 7. Duration system would change colour of the tasks depending on how close it is to its set "deadline"
 8. Start/end data system would change colour of the project depending on how close it is to the dateline
 9. Implemented Web Sockets to allow for changes to the system to automatically update users other systems
 10. Configure application to be used on tablets, laptops and desktops (currently it is purely a mobile app)
-
