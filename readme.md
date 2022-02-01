@@ -1,18 +1,12 @@
 ## Diploma of Web Development - Major Project Part 1
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
 This project was created as a Web Application for the first part of the Diplomas major project. It was created using: 
-HTML and CSS - Structure and Styling 
-Javascript - Frontend interface (ajax for asynchronous backend calls) 
-PHP - Backend API 
-MySQL - Database Management System
+***HTML** and **CSS** - Structure and Styling 
+* **Javascript** - Frontend interface (ajax for asynchronous backend calls) 
+***PHP** - Backend API 
+***MySQL** - Database Management System
 
-*****************************************   Operational   ***********************************************
+###Operational
 
 Import webapp.sql file into MySQL or other relational database management system 
 
@@ -46,7 +40,7 @@ Password=(doesnt have a password log in with this to see the create password fea
 Username=testerman
 Password=(doesnt have a password log in with this to see the create password feature)
 
-********************************************   Roadmap   ************************************************************
+###Roadmap
 
 Roadmap:
 1. Security on discriptions needs to be modified to protect against injects (currently doesnt restrict <h1> tags
