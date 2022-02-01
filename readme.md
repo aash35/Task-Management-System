@@ -6,7 +6,7 @@ This project was created as a Web Application for the first part of the Diplomas
 * **PHP** - Backend API 
 * **MySQL** - Database Management System
 
-###Operational
+### Operational
 
 Import webapp.sql file into MySQL or other relational database management system 
 
@@ -40,9 +40,7 @@ Password=(doesnt have a password log in with this to see the create password fea
 Username=testerman
 Password=(doesnt have a password log in with this to see the create password feature)
 
-###Roadmap
-
-Roadmap:
+### Roadmap
 1. Security on discriptions needs to be modified to protect against injects (currently doesnt restrict <h1> tags
    for example) 
 2. Project displayer needs to display all projects for a manager so that deleting the projects can be done from 
