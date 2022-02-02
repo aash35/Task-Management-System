@@ -25,24 +25,24 @@ Admin (all additional feature create new job type, create new employee etc.):
 Username=aash35
 Password=aash35
 
-Normal Users:
+Normal Users:  
 
-Username=tester123
-Password=tester123
-
-Username=bigtest123
-Password=bigtest123
-
-Username=test123
-Password=(doesn't have a password login with this to see the create password feature)
-
-Username=test321
-Password=(doesn't have a password login with this to see the create password feature)
-
-Username=testerman
-Password=(doesn't have a password login with this to see the create password feature)
-
-### Roadmap
+Username=tester123  
+Password=tester123  
+  
+Username=bigtest123  
+Password=bigtest123  
+  
+Username=test123  
+Password=(doesn't have a password login with this to see the create password feature)  
+  
+Username=test321  
+Password=(doesn't have a password login with this to see the create password feature)  
+  
+Username=testerman  
+Password=(doesn't have a password login with this to see the create password feature)  
+  
+### Roadmap  
 1. Security on descriptions needs to be modified to protect against injects (currently doesn't restrict `<h1>` tags
    for example) 
 2. Project displayer needs to display all projects for a manager so that deleting the projects can be done from 
