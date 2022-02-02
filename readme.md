@@ -21,11 +21,11 @@ __construct function at the top of the file
 To access the web app unpack the ux3 folder into localhost and navigate to it in the web browser:
 http://localhost/ux3/
 
-Admin (all additional feature create new job type, create new employee etc.):
+**Admin (all additional feature create new job type, create new employee etc.):**
 Username=aash35
 Password=aash35
 
-Normal Users:  
+**Normal Users:**  
 
 Username=tester123  
 Password=tester123  
