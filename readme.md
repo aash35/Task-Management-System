@@ -22,6 +22,7 @@ To access the web app unpack the ux3 folder into localhost and navigate to it in
 http://localhost/ux3/
 
 **Admin (all additional feature create new job type, create new employee etc.):**  
+
 Username=aash35  
 Password=aash35  
   
