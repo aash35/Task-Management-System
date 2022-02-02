@@ -1,12 +1,14 @@
 ## Diploma of Web Development - Major Project Part 1
 
-This project was created as a Web Application for the first part of the Diplomas major project. The purpose of this project was to create a system in which managers will be able to assign and manage a project's tasks. The staff will be able to update the progress of the tasks they were assigned. This will allow for clear project management and visually update the team on the overall progress.  
-
 ### Languages/Frameworks
 * **HTML** and **CSS** - Structure and Styling 
 * **Javascript** - Frontend interface (ajax for asynchronous backend calls) 
 * **PHP** - Backend API 
 * **MySQL** - Database Management System
+
+This project was created as a Web Application for the first part of the Diplomas major project. The purpose of this project was to create a system in which managers will be able to assign and manage a project's tasks. The staff will be able to update the progress of the tasks they were assigned. This will allow for clear project management and visually update the team on the overall progress.  
+
+
 
 ### Operational
 
